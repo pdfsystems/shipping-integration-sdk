@@ -7,7 +7,7 @@ use Rpungello\SdkClient\SdkClient;
 
 class ShippingSdkClient extends SdkClient
 {
-    public function __construct(public string $tenantId, public string $authToken, string $baseUri = 'https://shipping.pdfsystems.com', ?HandlerStack $handler = null)
+    public function __construct(public string $tenantId, public string $authToken, string $baseUri = 'https://shipping.pdfsystems.com', HandlerStack $handler = null)
     {
         parent::__construct($baseUri, $handler);
     }
