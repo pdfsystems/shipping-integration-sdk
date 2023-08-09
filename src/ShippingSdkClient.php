@@ -52,4 +52,20 @@ class ShippingSdkClient extends SdkClient
             'id' => $lastId,
         ]);
     }
+
+    /**
+     * Gets new tracking numbers from the shipping API
+     *
+     * @param int $appId
+     * @param int $lastId
+     * @return Tracking[]
+     * @throws GuzzleException
+     */
+    public function getTrackingNumbersForApp(int $appId, int $lastId = 0): array
+    {
+        return $this->getDtoArray('tracking', Tracking::class, [
+            'source' => $appId,
+            'id' => $lastId,
+        ]);
+    }
 }
