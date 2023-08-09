@@ -2,8 +2,11 @@
 
 namespace Pdfsystems\ShippingIntegrationSdk;
 
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\HandlerStack;
+use Pdfsystems\ShippingIntegrationSdk\Dtos\Tracking;
 use Rpungello\SdkClient\SdkClient;
+use Spatie\DataTransferObject\Exceptions\UnknownProperties;
 
 class ShippingSdkClient extends SdkClient
 {
@@ -20,5 +23,20 @@ class ShippingSdkClient extends SdkClient
         $config['headers']['authorization'] = "Bearer $this->authToken";
 
         return $config;
+    }
+
+    /**
+     * Gets new tracking numbers from the shipping API
+     *
+     * @param int $lastId
+     * @return Tracking[]
+     * @throws GuzzleException
+     * @throws UnknownProperties
+     */
+    public function getTrackingNumbers(int $lastId = 0): array
+    {
+        return $this->getDtoArray('tracking', Tracking::class, [
+            'id' => $lastId,
+        ]);
     }
 }
