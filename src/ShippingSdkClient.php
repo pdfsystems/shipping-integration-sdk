@@ -30,8 +30,6 @@ class ShippingSdkClient extends SdkClient
      * Submits an order to the shipping API. If this order already exists it will be updated, otherwise a new one will
      * be created. In either case, the resulting order is returned.
      *
-     * @param Order $order
-     * @return Order
      * @throws GuzzleException
      * @throws UnknownProperties
      */
@@ -43,8 +41,8 @@ class ShippingSdkClient extends SdkClient
     /**
      * Gets new tracking numbers from the shipping API
      *
-     * @param int $lastId
      * @return Tracking[]
+     *
      * @throws GuzzleException
      * @throws UnknownProperties
      */

@@ -4,7 +4,6 @@ use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use Pdfsystems\ShippingIntegrationSdk\Dtos\Order;
-use Pdfsystems\ShippingIntegrationSdk\Dtos\Tracking;
 use Pdfsystems\ShippingIntegrationSdk\ShippingSdkClient;
 
 it('can load create orders', function () {
