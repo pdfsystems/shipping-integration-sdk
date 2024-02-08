@@ -59,8 +59,9 @@ class ShippingSdkClient extends SdkClient
      * @return Tracking[]
      *
      * @throws GuzzleException
+     * @throws UnknownProperties
      */
-    public function getTrackingNumbersForApp(int $appId, int $lastId = 0): array
+    public function getTrackingNumbersForApp(int $appId, ?int $lastId = null): array
     {
         return $this->getDtoArray('tracking', Tracking::class, [
             'source' => $appId,
