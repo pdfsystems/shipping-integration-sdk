@@ -2,6 +2,10 @@
 
 All notable changes to `shipping-integration-sdk` will be documented in this file.
 
+## 1.1.2 - 2024-02-08
+
+See 1.1.1
+
 ## 1.1.1 - 2024-02-08
 
 Use null as default for last tracking ID
