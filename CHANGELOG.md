@@ -2,6 +2,10 @@
 
 All notable changes to `shipping-integration-sdk` will be documented in this file.
 
+## 1.2.0 - 2024-08-26
+
+Use enum for order type
+
 ## 1.1.2 - 2024-02-08
 
 See 1.1.1
