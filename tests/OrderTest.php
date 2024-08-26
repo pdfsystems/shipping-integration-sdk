@@ -22,12 +22,12 @@ it('can load create orders', function () {
     ]);
     $client = new ShippingSdkClient('test', 'test', 'https://example.com', HandlerStack::create($mock));
     $order = $client->submitOrder(new Order($data));
-    expect($order)->toBeInstanceOf(Order::class);
-    expect($order->id)->toBe(1);
-    expect($order->sourceApplication)->toBe(1);
-    expect($order->orderType)->toBe(OrderType::SalesOrder);
-    expect($order->orderId)->toBe('1234');
-    expect($order->orderNumber)->toBe('10000-0');
-    expect($order->shipToName)->toBe('John Doe');
-    expect($order->shipToStreet)->toBe('123 Fake St');
+    expect($order)->toBeInstanceOf(Order::class)
+        ->and($order->id)->toBe(1)
+        ->and($order->sourceApplication)->toBe(1)
+        ->and($order->orderType)->toBe(OrderType::SalesOrder)
+        ->and($order->orderId)->toBe('1234')
+        ->and($order->orderNumber)->toBe('10000-0')
+        ->and($order->shipToName)->toBe('John Doe')
+        ->and($order->shipToStreet)->toBe('123 Fake St');
 });

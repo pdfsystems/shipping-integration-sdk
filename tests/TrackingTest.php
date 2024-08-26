@@ -27,12 +27,12 @@ it('can load tracking numbers', function () {
     ]);
     $client = new ShippingSdkClient('test', 'test', 'https://example.com', HandlerStack::create($mock));
     $tracking = $client->getTrackingNumbers();
-    expect($tracking)->toBeArray();
-    expect($tracking)->toHaveCount(1);
-    expect($tracking[0])->toBeInstanceOf(Tracking::class);
-    expect($tracking[0]->id)->toBe(1);
-    expect($tracking[0]->trackingNumber)->toBe('1234567890');
-    expect($tracking[0]->order)->toBeInstanceOf(Order::class);
+    expect($tracking)->toBeArray()
+        ->and($tracking)->toHaveCount(1)
+        ->and($tracking[0])->toBeInstanceOf(Tracking::class)
+        ->and($tracking[0]->id)->toBe(1)
+        ->and($tracking[0]->trackingNumber)->toBe('1234567890')
+        ->and($tracking[0]->order)->toBeInstanceOf(Order::class);
 });
 
 it('can load tracking numbers for app', function () {
