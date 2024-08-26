@@ -2,8 +2,11 @@
 
 namespace Pdfsystems\ShippingIntegrationSdk\Dtos;
 
+use Pdfsystems\ShippingIntegrationSdk\Enums\OrderType;
+use Spatie\DataTransferObject\Attributes\CastWith;
 use Spatie\DataTransferObject\Attributes\MapFrom;
 use Spatie\DataTransferObject\Attributes\MapTo;
+use Spatie\DataTransferObject\Casters\EnumCaster;
 use Spatie\DataTransferObject\DataTransferObject;
 
 class Order extends DataTransferObject
@@ -16,7 +19,8 @@ class Order extends DataTransferObject
 
     #[MapFrom('order_type')]
     #[MapTo('order_type')]
-    public int $orderType;
+    #[CastWith(EnumCaster::class, OrderType::class)]
+    public OrderType $orderType;
 
     #[MapFrom('order_id')]
     #[MapTo('order_id')]

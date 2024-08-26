@@ -4,6 +4,7 @@ use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use Pdfsystems\ShippingIntegrationSdk\Dtos\Order;
+use Pdfsystems\ShippingIntegrationSdk\Enums\OrderType;
 use Pdfsystems\ShippingIntegrationSdk\ShippingSdkClient;
 
 it('can load create orders', function () {
@@ -24,7 +25,7 @@ it('can load create orders', function () {
     expect($order)->toBeInstanceOf(Order::class);
     expect($order->id)->toBe(1);
     expect($order->sourceApplication)->toBe(1);
-    expect($order->orderType)->toBe(1);
+    expect($order->orderType)->toBe(OrderType::SalesOrder);
     expect($order->orderId)->toBe('1234');
     expect($order->orderNumber)->toBe('10000-0');
     expect($order->shipToName)->toBe('John Doe');
