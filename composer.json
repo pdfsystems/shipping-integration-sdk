@@ -1,5 +1,6 @@
 {
     "name": "pdf-systems-inc/shipping-integration-sdk",
+    "version": "1.2.0",
     "description": "SDK for interfacing with PDF's shipping platform",
     "keywords": [
         "pdf-systems-inc",
