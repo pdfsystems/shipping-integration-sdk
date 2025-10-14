@@ -2,8 +2,6 @@
 
 namespace Pdfsystems\ShippingIntegrationSdk;
 
-use GuzzleHttp\Exception\GuzzleException;
-use GuzzleHttp\HandlerStack;
 use Pdfsystems\ShippingIntegrationSdk\Dtos\Order;
 use Pdfsystems\ShippingIntegrationSdk\Dtos\Tracking;
 use Rpungello\SdkClient\SdkClient;
@@ -11,7 +9,6 @@ use Spatie\DataTransferObject\Exceptions\UnknownProperties;
 
 class ShippingSdkClient extends SdkClient
 {
-
     /**
      * Submits an order to the shipping API. If this order already exists it will be updated, otherwise a new one will
      * be created. In either case, the resulting order is returned.
