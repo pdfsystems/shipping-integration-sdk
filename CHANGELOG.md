@@ -2,6 +2,10 @@
 
 All notable changes to `shipping-integration-sdk` will be documented in this file.
 
+## 2.0.0 - 2025-10-14
+
+Upgrade to v2 base SDK client for Laravel HTTP client support
+
 ## 1.2.0 - 2024-08-26
 
 Use enum for order type
