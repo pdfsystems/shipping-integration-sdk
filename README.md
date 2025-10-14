@@ -1,8 +1,8 @@
 # SDK for interfacing with PDF's shipping platform
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/pdf-systems-inc/shipping-integration-sdk.svg?style=flat-square)](https://packagist.org/packages/pdf-systems-inc/shipping-integration-sdk)
-[![Tests](https://img.shields.io/github/actions/workflow/status/pdf-systems-inc/shipping-integration-sdk/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/pdf-systems-inc/shipping-integration-sdk/actions/workflows/run-tests.yml)
-[![Total Downloads](https://img.shields.io/packagist/dt/pdf-systems-inc/shipping-integration-sdk.svg?style=flat-square)](https://packagist.org/packages/pdf-systems-inc/shipping-integration-sdk)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/pdfsystems/shipping-integration-sdk.svg?style=flat-square)](https://packagist.org/packages/pdfsystems/shipping-integration-sdk)
+[![Tests](https://img.shields.io/github/actions/workflow/status/pdfsystems/shipping-integration-sdk/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/pdfsystems/shipping-integration-sdk/actions/workflows/run-tests.yml)
+[![Total Downloads](https://img.shields.io/packagist/dt/pdfsystems/shipping-integration-sdk.svg?style=flat-square)](https://packagist.org/packages/pdfsystems/shipping-integration-sdk)
 
 This is where your description should go. Try and limit it to a paragraph or two. Consider adding a small example.
 
@@ -19,7 +19,7 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 You can install the package via composer:
 
 ```bash
-composer require pdf-systems-inc/shipping-integration-sdk
+composer require pdfsystems/shipping-integration-sdk
 ```
 
 ## Usage

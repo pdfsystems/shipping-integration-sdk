@@ -3,11 +3,11 @@
 namespace Pdfsystems\ShippingIntegrationSdk\Dtos;
 
 use Pdfsystems\ShippingIntegrationSdk\Enums\OrderType;
+use Rpungello\SdkClient\DataTransferObject;
 use Spatie\DataTransferObject\Attributes\CastWith;
 use Spatie\DataTransferObject\Attributes\MapFrom;
 use Spatie\DataTransferObject\Attributes\MapTo;
 use Spatie\DataTransferObject\Casters\EnumCaster;
-use Spatie\DataTransferObject\DataTransferObject;
 
 class Order extends DataTransferObject
 {

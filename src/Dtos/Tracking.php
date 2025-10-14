@@ -4,9 +4,9 @@ namespace Pdfsystems\ShippingIntegrationSdk\Dtos;
 
 use DateTimeImmutable;
 use Rpungello\SdkClient\Casters\DateTimeCaster;
+use Rpungello\SdkClient\DataTransferObject;
 use Spatie\DataTransferObject\Attributes\CastWith;
 use Spatie\DataTransferObject\Attributes\MapFrom;
-use Spatie\DataTransferObject\DataTransferObject;
 
 class Tracking extends DataTransferObject
 {

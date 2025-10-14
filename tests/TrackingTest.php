@@ -3,6 +3,7 @@
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
+use Pdfsystems\ShippingIntegrationSdk\Drivers\GuzzleDriver;
 use Pdfsystems\ShippingIntegrationSdk\Dtos\Order;
 use Pdfsystems\ShippingIntegrationSdk\Dtos\Tracking;
 use Pdfsystems\ShippingIntegrationSdk\ShippingSdkClient;
@@ -25,7 +26,7 @@ it('can load tracking numbers', function () {
     $mock = new MockHandler([
         new Response(200, ['content-type' => 'application/json'], json_encode($data)),
     ]);
-    $client = new ShippingSdkClient('test', 'test', 'https://example.com', HandlerStack::create($mock));
+    $client = new ShippingSdkClient(new GuzzleDriver('test', 'test', 'https://example.com', HandlerStack::create($mock)));
     $tracking = $client->getTrackingNumbers();
     expect($tracking)->toBeArray()
         ->and($tracking)->toHaveCount(1)
@@ -53,7 +54,7 @@ it('can load tracking numbers for app', function () {
     $mock = new MockHandler([
         new Response(200, ['content-type' => 'application/json'], json_encode($data)),
     ]);
-    $client = new ShippingSdkClient('test', 'test', 'https://example.com', HandlerStack::create($mock));
+    $client = new ShippingSdkClient(new GuzzleDriver('test', 'test', 'https://example.com', HandlerStack::create($mock)));
     $tracking = $client->getTrackingNumbersForApp(0);
     expect($tracking)->toBeArray();
     expect($tracking)->toHaveCount(1);

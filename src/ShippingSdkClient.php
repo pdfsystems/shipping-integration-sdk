@@ -11,26 +11,11 @@ use Spatie\DataTransferObject\Exceptions\UnknownProperties;
 
 class ShippingSdkClient extends SdkClient
 {
-    public function __construct(public string $tenantId, public string $authToken, string $baseUri = 'https://shipping.pdfsystems.com', ?HandlerStack $handler = null)
-    {
-        parent::__construct($baseUri, $handler);
-    }
-
-    protected function getGuzzleClientConfig(): array
-    {
-        $config = parent::getGuzzleClientConfig();
-
-        $config['base_uri'] = "{$config['base_uri']}/$this->tenantId/api/";
-        $config['headers']['authorization'] = "Bearer $this->authToken";
-
-        return $config;
-    }
 
     /**
      * Submits an order to the shipping API. If this order already exists it will be updated, otherwise a new one will
      * be created. In either case, the resulting order is returned.
      *
-     * @throws GuzzleException
      * @throws UnknownProperties
      */
     public function submitOrder(Order $order): Order
@@ -43,7 +28,6 @@ class ShippingSdkClient extends SdkClient
      *
      * @return Tracking[]
      *
-     * @throws GuzzleException
      * @throws UnknownProperties
      */
     public function getTrackingNumbers(?int $lastId = null): array
@@ -58,7 +42,6 @@ class ShippingSdkClient extends SdkClient
      *
      * @return Tracking[]
      *
-     * @throws GuzzleException
      * @throws UnknownProperties
      */
     public function getTrackingNumbersForApp(int $appId, ?int $lastId = null): array

@@ -1,12 +1,11 @@
 {
-    "name": "pdf-systems-inc/shipping-integration-sdk",
-    "version": "1.2.0",
+    "name": "pdfsystems/shipping-integration-sdk",
     "description": "SDK for interfacing with PDF's shipping platform",
     "keywords": [
         "pdf-systems-inc",
         "shipping-integration-sdk"
     ],
-    "homepage": "https://github.com/pdf-systems-inc/shipping-integration-sdk",
+    "homepage": "https://github.com/pdfsystems/shipping-integration-sdk",
     "license": "MIT",
     "authors": [
         {
@@ -17,7 +16,7 @@
     ],
     "require": {
         "php": "^8.1",
-        "rpungello/sdk-client": ">=1.2.0 <2.0",
+        "rpungello/sdk-client": ">=2.1.3 <3.0",
         "spatie/data-transfer-object": "^3.9"
     },
     "require-dev": {

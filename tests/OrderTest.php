@@ -3,6 +3,7 @@
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
+use Pdfsystems\ShippingIntegrationSdk\Drivers\GuzzleDriver;
 use Pdfsystems\ShippingIntegrationSdk\Dtos\Order;
 use Pdfsystems\ShippingIntegrationSdk\Enums\OrderType;
 use Pdfsystems\ShippingIntegrationSdk\ShippingSdkClient;
@@ -20,7 +21,7 @@ it('can load create orders', function () {
     $mock = new MockHandler([
         new Response(200, ['content-type' => 'application/json'], json_encode($data)),
     ]);
-    $client = new ShippingSdkClient('test', 'test', 'https://example.com', HandlerStack::create($mock));
+    $client = new ShippingSdkClient(new GuzzleDriver('test', 'test', 'https://example.com', HandlerStack::create($mock)));
     $order = $client->submitOrder(new Order($data));
     expect($order)->toBeInstanceOf(Order::class)
         ->and($order->id)->toBe(1)
