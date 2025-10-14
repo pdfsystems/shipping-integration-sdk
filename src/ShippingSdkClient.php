@@ -4,6 +4,7 @@ namespace Pdfsystems\ShippingIntegrationSdk;
 
 use Pdfsystems\ShippingIntegrationSdk\Dtos\Order;
 use Pdfsystems\ShippingIntegrationSdk\Dtos\Tracking;
+use Rpungello\SdkClient\Exceptions\RequestException;
 use Rpungello\SdkClient\SdkClient;
 use Spatie\DataTransferObject\Exceptions\UnknownProperties;
 
@@ -14,6 +15,7 @@ class ShippingSdkClient extends SdkClient
      * be created. In either case, the resulting order is returned.
      *
      * @throws UnknownProperties
+     * @throws RequestException
      */
     public function submitOrder(Order $order): Order
     {
@@ -26,6 +28,7 @@ class ShippingSdkClient extends SdkClient
      * @return Tracking[]
      *
      * @throws UnknownProperties
+     * @throws RequestException
      */
     public function getTrackingNumbers(?int $lastId = null): array
     {
@@ -40,6 +43,7 @@ class ShippingSdkClient extends SdkClient
      * @return Tracking[]
      *
      * @throws UnknownProperties
+     * @throws RequestException
      */
     public function getTrackingNumbersForApp(int $appId, ?int $lastId = null): array
     {
